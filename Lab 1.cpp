@@ -49,7 +49,7 @@ int main() {
 
 //turning seconds to moment
     Moment= seconds/90.0;
-    cout<<seconds<<"/90"<<Moment<<"\n";
+    cout<<seconds<<"/90.0"<<Moment<<"\n";
 
 //displaying all the outputs
     cout<< "The distance away from the Mall in Jiffy is " << Jiffy<< " ! " << " \n ";
