@@ -7,19 +7,19 @@
 #include <ctime>
 using namespace std;
 
-void intro(){
+void intro(){//game introduction
 cout<<"You have to guess the computer which is between 1 to 10."<<endl;
 cout<<"Depending oun your gess you answer could be too low or too high"<<endl;
 cout<<" "<<endl;
 }
 
 int main(){
-  //create variables
+  //setting up the code
   int max = 10;
   int userGuess = 1;
   int computerGuess = 0;
    
-  intro(); 
+  intro(); //function call
   srand(time(0));
   
   //this next line creates a random number from 1 to 10 that the computer chooses
