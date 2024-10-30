@@ -1,59 +1,54 @@
-//Created by: Rafael Pompa
-//Date: 9/18
-//this program is used to design the code for Project 1 by taking a given input (unit) to turn it into an output (a different unit)
+// made by rafael pompa
+// created on 10/29
+// program is a guessing the number that the comuter stores
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
-int main() {
-//setting up the coding process
-    float hour =0;
-    float minutes =0;
-    float seconds =0;
-    float Jiffy =0;
-    float nanoseconds =0;
-    float Shake =0;
-    float Moment =0;
+void intro(){
+cout<<"You have to guess the computer which is between 1 to 10."<<endl;
+cout<<"Depending oun your gess you answer could be too low or too high"<<endl;
+cout<<" "<<endl;
+}
 
-//picking a starting hour
-    cout<<"please enter a hour : ";
-    cin>>hour;
-    cout<<"The distance away from the Mall is "<<hour<<"\n";
-//converting hour to minutes
-    minutes =hour*60;
-    cout<<hour<<"*60="<<minutes<<"\n";
+int main(){
+  //create variables
+  int max = 10;
+  int userGuess = 1;
+  int computerGuess = 0;
+   
+  intro(); 
+  srand(time(0));
+  
+  //this next line creates a random number from 1 to 10 that the computer chooses
+  computerGuess = rand()%max + 1;
 
-    minutes =minutes/1.0;
-    cout<<minutes<<"/1.0="<<minutes<<"\n";
+  //ask the user to enter a guess for the computer number
+  cout<<"Please choose a number you think the computer chose between 1 and "<< max<<": ";
+  cin>>userGuess;
+  
+  cout<<endl;
+  
+  //create a loop that compares the computer Guess to the user Guess 
+  while (computerGuess != userGuess) {
 
-//converting minutes to seconds
-    seconds =minutes*60;
-    cout<<minutes<<"*60="<<seconds<<"\n";
+  //tell the user that the guessed incorrect
+  cout<<"You have guessed incorrectly"<<endl;
 
-    seconds =seconds/1.0;
-    cout<<seconds<<"/1.0="<<seconds<<"\n";
-//converting seconds to jiffy
-    Jiffy =seconds*0.01;
-    cout<<seconds<<"*0.01="<<Jiffy<<"\n";
+  if (userGuess > computerGuess) {
+  cout << "Your guess is too high." << endl;
+  } else {
+  cout << "Your guess is too low." << endl;
+  }
 
-//converting seconds to nanoseconds
-    nanoseconds =seconds*1000000000;
-    cout<<seconds<<"*1000000000="<<nanoseconds<<"\n";
+  //ask the user to enter a new guess for the computer number
+  cout<<"Please enter another guess ";
+  cin>>userGuess;
 
-    nanoseconds =nanoseconds/1.0;
-    cout<<nanoseconds<<"*0.01="<<nanoseconds<<"\n";
-
-//turning nanoseconds to shake
-    Shake =nanoseconds/10;
-    cout<<nanoseconds<<"/10="<<Shake<<"\n";
-
-//turning seconds to moment
-    Moment= seconds/90.0;
-    cout<<seconds<<"/90.0"<<Moment<<"\n";
-
-//displaying all the outputs
-    cout<< "The distance away from the Mall in Jiffy is " << Jiffy<< " ! " << " \n ";
-    cout<< "The distance away from the Mall in Moment is " << Moment<< " ! " << " \n ";
-    cout<< "The distance away from the Mall in Shake is " << Shake<< " ! " << " \n ";
-//I was wondering why it wouldn't show the whole number  for jiffy.
+  cout<<"the computer guess was "<<computerGuess<<endl;
+  //print out that the user got the answer correctly and how many guesses it took (the count)
+  cout<<"It took you "<<count<<" guesses to get the computer's number";
+  }
 }
