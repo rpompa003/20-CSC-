@@ -7,19 +7,21 @@
 #include <ctime>
 using namespace std;
 
-void intro(){//game introduction
+void intro(){
 cout<<"You have to guess the computer which is between 1 to 10."<<endl;
 cout<<"Depending oun your gess you answer could be too low or too high"<<endl;
 cout<<" "<<endl;
 }
 
 int main(){
-  //setting up the code
+  //create variables
+  int count =0;
   int max = 10;
   int userGuess = 1;
   int computerGuess = 0;
    
-  intro(); //function call
+  intro(); 
+
   srand(time(0));
   
   //this next line creates a random number from 1 to 10 that the computer chooses
@@ -33,6 +35,8 @@ int main(){
   
   //create a loop that compares the computer Guess to the user Guess 
   while (computerGuess != userGuess) {
+  //increase the count by 1
+  count = count+1;
 
   //tell the user that the guessed incorrect
   cout<<"You have guessed incorrectly"<<endl;
@@ -46,9 +50,9 @@ int main(){
   //ask the user to enter a new guess for the computer number
   cout<<"Please enter another guess ";
   cin>>userGuess;
+  }
 
   cout<<"the computer guess was "<<computerGuess<<endl;
   //print out that the user got the answer correctly and how many guesses it took (the count)
   cout<<"It took you "<<count<<" guesses to get the computer's number";
   }
-}
